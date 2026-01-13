@@ -73,8 +73,8 @@ recentbtn.addEventListener("click",()=>{
 });
 catalog.addEventListener("click",(event)=>{
     if(event.target.classList!="my-collections"){
-        localStorage.setItem("chosecollection", JSON.stringify(mycollections[event.target.id-1]));
-        window.location.href = `collection.html?id=${event.target.id}`;
+            localStorage.setItem("chosecollection", JSON.stringify(mycollections[event.target.id-1]));
+            window.location.href = `collection.html?id=${event.target.id}`;
     }
 });
 
@@ -121,9 +121,15 @@ function renderCollection(id, text, cnt)
     button.textContent=text;
     button.id = id;
 
+    // const del = document.createElement("p");
+    // del.className="delete";
+    // del.id=id;
+    // del.textContent="X";
+
     const div = document.createElement("div");
     div.appendChild(p);
     div.appendChild(button);
+    // div.appendChild(del);
 
     catalog.appendChild(div);
 }

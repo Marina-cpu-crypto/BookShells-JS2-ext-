@@ -16,6 +16,7 @@ else{
 
 const catalog = document.getElementById("chose-collection");
 const cleanbtn = document.getElementById("clear");
+// const deletebtn = document.getElementById("delete");
 
 let p = document.getElementById("about-collection");
 

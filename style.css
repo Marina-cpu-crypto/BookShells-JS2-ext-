@@ -288,6 +288,7 @@ select{
 }
 .your-rating button:hover{background: #DFB971;color: #543402;}
 .in-collections{
+  overflow: auto;
   display: flex;
   flex-wrap: wrap;
     grid-area: b;
@@ -296,6 +297,9 @@ select{
     box-shadow: 2px 2px  #c5800097;
     width: 400px;
     height: 150px;
+}
+.in-collections::-webkit-scrollbar {
+    display: none;
 }
 .in-collections p{margin-bottom: 0;}
 .description{

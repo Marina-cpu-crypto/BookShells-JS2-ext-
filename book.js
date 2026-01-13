@@ -4,16 +4,6 @@ const bookId = "book"+Number(params.get('id'));
 const books = JSON.parse(localStorage.getItem('books')) || [];
 let book = books.find((book)=> book.id === bookId);
 
-const defaultcollections = JSON.parse(localStorage.getItem("defaultcollections")) || [];
-let mycollections = localStorage.getItem("mycollections") || [];
-if(mycollections.length>0)
-{
-    mycollections = JSON.parse(mycollections);
-}
-// let bookcollections = [];
-
-// let book = JSON.parse(localStorage.getItem('book'));
-
 //Контейнеры
 let imgbuttons = document.getElementById("img-buttons");
 let bookinformation = document.getElementById("book-information");
@@ -21,6 +11,19 @@ let incollections = document.getElementById("in-collections");
 let description = document.getElementById("description");
 let textreview = document.getElementById("text-review");
 let image = document.getElementById("img-on-page");
+
+
+const defaultcollections = JSON.parse(localStorage.getItem("defaultcollections")) || [];
+let mycollections = localStorage.getItem("mycollections") || [];
+if(mycollections.length>0)
+{
+    mycollections = JSON.parse(mycollections);
+    renderCollections(mycollections);
+}
+// let bookcollections = [];
+
+// let book = JSON.parse(localStorage.getItem('book'));
+
 
 let select = document.getElementById("select");
 if (select && !select.value) 
@@ -43,13 +46,13 @@ if (select && !select.value)
     }
 }
 
-function renderCollections(defaultcollections){
-    (defaultcollections || []).forEach(defcollection=>{
-        (defcollection.books || []).forEach(df=>{
+function renderCollections(collections){
+    (collections || []).forEach(collection=>{
+        (collection.books || []).forEach(df=>{
             if(df && df.id==bookId){
                 const label = document.createElement('label');
                 label.className = "genre-inf";
-                label.innerText=defcollection.rusname;
+                label.innerText=collection.rusname;
                 if (incollections) incollections.appendChild(label);
             }
         });
