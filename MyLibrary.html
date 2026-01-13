@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookShells</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="information">
+            <a href="index.html" class="back"><- Назад, на главную</a>
+            <a href="profile.html">Профиль</a>
+            <button class="library">Библиотека</button>
+        </div>
+    </header>
+
+    <div class="library-header">
+        <div>
+            <h1>Моя библиотека</h1>
+            <h4>Управляйте своей коллекцией книг</h4>
+        </div>
+        
+        <div class="div2">
+            <input type="text" id="create-colection" placeholder="Добавить коллекцию">
+            <button class="ok" id="create">Ok</button>
+            <!-- <button id="add-collection" class="add-collection">+</button>
+            <p>Добавить коллекцию</p> -->
+        </div>
+    </div>
+    
+    <div class="collections" id="collections">
+        <div> <p class="reading-cnt" id="reading-cnt">0</p> <button class="reading" id="reading">Читаю сейчас</button></div>
+        <div> <p class="read-cnt" id="read-cnt">0</p> <button class="read" id="read">Прочитанные</button> </div>
+        <div> <p class="wanna-read-cnt" id="wanna-read-cnt">0</p> <button class="wanna-read" id="wanna-read">Хочу прочитать</button></div>
+        <div> <p class="recent-cnt" id="recent-cnt">0</p> <button class="recent" id="recent">Нeдавно просмотренные</button></div>
+    </div>
+
+    <h2>Мои коллекции</h2>
+    <div class="my-collections" id="my-collections">
+        <!-- <div><p class="collection-1">1</p> <button class="recent">Поэзия</button> </div> -->
+
+    </div>
+    <script src="library.js"></script>
+</body>
+</html>

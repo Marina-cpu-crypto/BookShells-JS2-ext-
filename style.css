@@ -1,0 +1,683 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    background: #292826;
+}
+.header-main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    height: auto;
+    width: 100%;
+    background: #292826;
+    box-shadow: 0 4px 4px #c5800097;
+    z-index: 100;
+}
+.information, .search{ margin-top: 20px;}
+.navigation{ 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+a{
+    display: flex;
+    float: right;
+    margin-right: 30px;
+    text-decoration: none;
+    color: #E0DFDC;
+}
+.library, .main-page{
+    display: flex;
+    float: right;
+    margin-right: 20px;
+    padding: 3px 30px;
+    color:  #e19609;
+    border-radius: 14px;
+    border: 1px solid  #e19609;
+    background: none;
+}
+.library:hover{background: #DFB971;color: #543402;}
+/* #ch:checked{background: #DFB971;color: #543402;} */
+.search{
+  margin-bottom: 10px;
+}
+.book-search{
+    width:85%;
+    margin: 0 20px;
+    background: #292826;
+    border-radius: 40px;
+    border: 1px solid  #e19609;
+    padding-left: 10px;
+    color: #e19609;
+}
+.search-btn{
+  display: flex;
+  float: right;
+    background: #DFB971;
+    color: #543402;
+    padding: 10px 30px;
+    border-radius: 50px;
+    width: auto;
+    margin-right: 20px;
+}
+
+/* .search-btn:checked{background: #543402; color:#DFB971;} */
+.all, .classic, .fantasy{
+    background: #DFB971;
+    color: #543402;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.catalog{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    margin: 200px 60px;
+}
+.book{
+    width: 240px;
+    height: 370px;
+    margin: 50px 0;
+    margin-right: 80px;
+    border-radius: 10px;
+    border: 1px solid #C58000;
+    box-shadow: 4px 4px 4px #e195099b;
+}
+.img-book{width: 238px; height: 290px; border-radius: 10px;}
+/* .description{margin-top:110} */
+.name, .author{
+    color: #E0DFDC;
+    margin: 0 10px;
+    font-size:smaller;
+}
+
+.genre-rating{
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  }
+.genre{
+    color:#cca867;
+    background: #292826;
+    border: 1px solid #B79557;
+    border-radius: 8px;
+    padding: 1px 5px;
+    margin-left: 10px;
+    font-size: smaller;
+}
+.rating{
+    display: flex;
+    float: right; 
+    margin-right: 10px;
+    color: #C58000; 
+}
+/*чтоб отправить изменение ты просто берешь и ну и отправляешь его*/
+
+/* Страница книги */
+header{
+    height: 50px;
+    /* box-shadow: 0 2px 2px #c5800097; */
+}
+.back{
+    display: flex;
+    float: left;
+    margin-left: 20px;
+    background: none;
+    color: #E0DFDC;
+}
+.main-div{
+    display: grid;
+    grid-template-areas: 
+    "one two";
+    grid-template-columns: 500px 1fr;
+}
+.img-buttons{
+    display: flex;
+    flex-direction: column;
+    grid-area: one;
+}
+.img-on-page{
+    margin: 0 50px;
+    margin-top: 30px;
+    width: 400px;
+    height: 500px;
+    border: 2px solid #C58000;
+    border-radius: 4px;
+}
+.Add{
+    font-size: large;
+    height: 40px;
+    width: 360px;
+    margin: 0 70px;
+    margin-top: 30px;
+    border-radius: 12px;
+    background: #DEB461;
+    color: #292826;
+}
+select{
+    height: 30px;
+    width: 360px;
+    margin: 0 70px;
+    margin-top: 20px;
+    border-radius: 12px;
+    background: #292826;
+    color: #DEB461;
+    border: 1px solid #C58000;
+}
+
+@media only screen and (max-width: 500px){
+  .book-search{
+    width:50%;
+}
+.main-div{
+  grid-template-areas: 
+    "one"
+    "two";
+}
+.all-about-book{
+   grid-template-areas: 
+    "a"
+    "b"
+    "c"
+    "t"
+    "d";
+}
+}
+@media only screen and (min-width: 400px) and (max-width: 900px){
+  .book-search{
+    width:75%;
+}
+.main-div{
+    display: grid;
+    grid-template-areas: 
+    "one two";
+    grid-template-columns: 300px 1.5fr;
+}
+}
+@media only screen and (min-width: 900px){
+  .book-search{
+    width:80%;
+}
+
+}
+
+.all-about-book{
+    grid-area: two;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    /*11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111*/
+    display: grid;
+    grid-template-areas: 
+    "a b"
+    "c c"
+    "t t"
+    "d d";
+}
+.book-information{
+    grid-area: a;
+    box-shadow: -2px -2px  #c5800097;
+    width: 450px;
+    height: 150px;
+}
+.name-inf{
+    font-size:larger;
+    margin: 2px 7px;
+    color:#DEB461;
+}
+.author-inf{
+    font-size: medium;
+    margin: 2px 7px;
+    color: #B79557;
+}
+.publish-house, .pages-number{
+    font-size: medium;
+    margin: 0 7px;
+    color: #e0dfdcdd;
+}
+.genre-inf{
+  height: 30px;
+  width: auto;
+    margin: 5px 7px;
+    color:#cca867;
+    background: #292826;
+    border: 1px solid #B79557;
+    border-radius: 8px;
+    padding: 1px 5px;
+}
+.your-rating{
+  display:flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  color: #B79557;
+}
+.your-rating p{
+  font-size: 16px;
+  margin: 5px 0;
+}
+.your-rating input{
+  width: 45px;
+  height: 25px;
+  margin: 5px 10px;
+  color:  #e19609;
+  border-radius: 10px;
+  border: 1px solid  #e19609;
+  background: none;
+}
+.your-rating button{
+  width: 45px;
+  height: 30px;
+  margin: 0 10px;
+  color:  #e19609;
+  border-radius: 10px;
+  border: 1px solid  #e19609;
+  background: none;
+}
+.your-rating button:hover{background: #DFB971;color: #543402;}
+.in-collections{
+  display: flex;
+  flex-wrap: wrap;
+    grid-area: b;
+    margin-left: 40px;
+    color: #e0dfdcdd;
+    box-shadow: 2px 2px  #c5800097;
+    width: 400px;
+    height: 150px;
+}
+.in-collections p{margin-bottom: 0;}
+.description{
+    grid-area: c;
+    color: #c2bfb7;
+    height: 120px;
+    width: 92%;
+}
+.description p, .text-review p{ margin: 0 0;}
+.text-review{
+  grid-area: t;
+  color: #c2bfb7;
+  height: 180px;
+  width: 92%;
+}
+.review{
+    grid-area: d;
+    color:#e0dfdcdd;
+}
+.input-review{
+    height: 50px;
+    width: 92%;
+    padding-left: 10px;
+    color:#C58000;
+    background: #292826;
+    border: 1px solid #C58000;
+    border-radius: 2px;
+}
+.Ok{
+  width: 40px;
+  height: 40px;
+  padding-right: 8px;
+  color:  #e19609;
+  border-radius: 10px;
+  border: 1px solid  #e19609;
+  background: none;
+}
+.Ok:hover{background: #DFB971;color: #543402;}
+
+/*Страница библиотеки*/
+h1{
+    color: #FFE7BB;
+    font-size: 40px;
+    margin: 0 30px;
+}
+h4, h2{
+    color: #c2bfb7;
+    margin: 0 30px;
+}
+.add-collection{
+    display: flex; 
+    float: right;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    padding: 2px 11px;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    background: #DEB461;
+}
+.library-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.library-header .div2{
+  display: flex;
+  flex-direction: row;
+}
+.library-header p{ 
+    display: flex; 
+    float: right;
+    width: 80px;
+    margin: 20px 15px;
+    /* margin: 40px 30px; */
+    color: #cca867;
+}
+.library-header input{ 
+    display: flex; 
+    float: right;
+    height: 30px;
+    width: 140px;
+    margin: 30px 0px;
+    margin-left: 30px;
+    background: none;
+    color: #cca867;
+    border: 1px solid #C58000;
+}
+.library-header .ok{
+  margin: 30px 30px;
+  margin-left: 0;
+  font-size: 20px;
+    display: flex; 
+    float: right;
+    height: 30px;
+    width: auto;
+    background: none;
+    color: #C58000;
+    border: 1px solid #C58000;
+}
+.collections, .my-collections{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px 80px;
+    /* margin-left: 80px; */
+}
+
+.collections button {
+    width: 200px;
+    height: 45px;
+    margin-top: 0px;
+    border-radius: 8px;
+}
+.collections p {
+    margin: 0px;
+    margin-left: 200px;
+}
+.my-collections button{
+  width: 200px;
+    height: 45px;
+    margin-right: 25px;
+    border-radius: 8px;
+    /* background: #ea9e1260;
+    color: #f3d7a47f;
+    border: 2px solid #f3bf5e7f; */
+    background: #75706560;
+    color: #c2bfb7;
+    border: 2px solid #67645e;
+}
+.my-collections p{
+  margin: 0px;
+    margin-left: 200px;
+     color:  #c2bfb7;
+}
+.reading{
+    background: #6d9fef79;
+    color: #8eb3ec;
+    border: 2px solid #8eb3ec;
+}
+.reading-cnt{color: #8eb3ec;}
+.read{
+    background: #6def764c;
+    color: #6def7679;
+    border: 2px solid #6def7679;
+}
+.read-cnt{color: #6def7679;}
+.wanna-read{
+    background: #ef6def4c;
+    color: #f4d1f462;
+    border: 2px solid #f5a5f54c;
+}
+.wanna-read-cnt{color: #f4d1f462;}
+.recent{
+    background: #ea9e1260;
+    color: #f3d7a47f;
+    border: 2px solid #f3bf5e7f;
+}
+.recent-cnt{color:#f7d5957f;}
+.collection-1{color:#f7daa47f;}
+
+.prof-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-left {
+  display: flex;
+  gap: 20px;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  background: #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.badges {
+  margin-top: 8px;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+.badge.yellow { background: #ffe2a8; }
+.badge.gray { background: #e0e0e0; }
+
+.profile-stats {
+  display: flex;
+  gap: 40px;
+  text-align: center;
+  color: #FFE7BB;
+}
+
+.profile-stats strong {
+  font-size: 24px;
+  
+}
+
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin: 30px 0;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.card .big {
+  font-size: 22px;
+   font-weight: bold;
+}
+
+.blue { background: #dbe7ff; }
+.green { background: #dff5d8; }
+.orange { background: #ffd8b0; }
+.yellow { background: #fff3a0; }
+.red { background: #ffb3b3; }
+.purple { background: #e7d9ff; }
+
+
+.block {
+  border: 1px solid #c5800097;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+
+.goal {
+  display: grid;
+  grid-template-columns: 200px 1fr 120px;
+  align-items: center;
+  margin: 12px 0;
+  color: #c2bfb7;
+}
+
+.progress {
+  height: 10px;
+  background: #c2bfb7;
+  border-radius: 6px;
+}
+
+.progress-fill {
+  background: #c5800097;
+  height: 100%;
+  border-radius: 6px;
+}
+
+
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.achievement {
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.achievement.active {
+  border: 2px solid #ffcc66;
+}
+
+.achievement.locked {
+  border: 2px solid #ccc;
+  opacity: 0.5;
+}
+.achievement-description {
+  color: #c2bfb7;
+  font-size: smaller;
+  margin-top: 4px;
+}
+
+
+.header-collection{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  height: auto;
+  width: 100%;
+  /* background: #8eb3ec; */
+  background: #67645e;
+  z-index: 100;
+}
+.inf-collection{
+  margin-top: 20px;
+}
+.about-collection{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.about-collection p{
+  font-size: 34px;
+  color: #2d5b9f;
+  margin: 20px 30px;
+}
+.about-collection button{
+  display: flex;
+  float: right; 
+  margin: 40px 20px;
+  padding: 1px 14px;
+  width: 160px;
+  height: 20px;
+  border-radius: 4px;
+  background: none;
+  color: #000000;
+}
+
+.chose-collection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    margin: 160px 20px;
+    /* margin: 50px 50px;
+    border-radius: 10px;
+    border: 1px solid #C58000;
+    box-shadow: 4px 4px 4px #e195099b; */
+}
+.chose-collection .book-card{
+    width: 300px;
+    height: 160px;
+    display: flex;
+    flex-direction: row;
+    margin: 30px 30px;
+    border-radius: 10px;
+    border: 1px solid #C58000;
+    box-shadow: 4px 4px 4px #e195099b;
+}
+.delete{
+  width: 50px;
+  color: #e195099b;
+  background: #292826;
+  /* box-shadow: -2px -2px -2px #C58000; */
+}
+.chose-collection .img-book-mini{width: 130px; height: 158px; border-radius: 10px;}
+.book-desc .name{
+  margin: 0 5px;
+  color: #B79557;
+  font-size:medium;
+}
+.book-desc .author{
+  margin: 5px 5px;
+  color: #B79557;
+  font-size: smaller;
+}
+.book-desc .begin, .book-desc .end, .book-desc .rating{
+  margin: 0 5px;
+  color: #c2bfb7;
+  font-size: smaller;
+}
+.book-desc .genre-rating{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.book-desc .genre{width: 60px; margin: 0 5px;}

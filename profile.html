@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookShells</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <header>
+        <div class="information">
+            <a href="index.html" class="back">Назад, на главную</a>
+            <a href="profile.html">Профиль</a>
+            <a href="MyLibrary.html" class="library">Библиотека</a>
+        </div>
+    </header>
+<body>
+    <main class="prof-container">
+
+  <section class="profile">
+    <div class="profile-left">
+      <div class="avatar">ИИ</div>
+      <div>
+        <h1>Иван Иванов</h1>
+        <div class="badges">
+          <span class="badge yellow">⭐ активный читатель</span>
+          <span class="badge gray">47 дней подряд</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-stats">
+      <div>
+        <strong id="books-count">0</strong>
+        <span>книг прочитано</span>
+      </div>
+      <div>
+        <strong id="reviews-count">0</strong>
+        <span>рецензий</span>
+      </div>
+      <div>
+        <strong id="avg-rating">0</strong>
+        <span>средняя оценка</span>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="cards">
+    <div class="card blue">
+      <h3>📘 книг прочитано</h3>
+      <p class="big">25</p>
+      <span>в этом году</span>
+    </div>
+
+    <div class="card green">
+      <h3>✍ рецензий написано</h3>
+      <p class="big">13</p>
+      <span>в этом году</span>
+    </div>
+
+    <div class="card orange">
+      <h3>📄 страниц прочитано</h3>
+      <p class="big">14540</p>
+      <span>в этом году</span>
+    </div>
+
+    <div class="card yellow">
+      <h3>⭐ средняя оценка</h3>
+      <p class="big">4.2</p>
+      <span>ваших оценок книг</span>
+    </div>
+
+    <div class="card red">
+      <h3>🔥 серия чтения</h3>
+      <p class="big">67</p>
+      <span>дней подряд</span>
+    </div>
+
+    <div class="card purple">
+      <h3>🏆 любимый жанр</h3>
+      <p class="big">поэзия</p>
+      <span>больше всего читаете</span>
+    </div>
+  </section>
+
+
+  <section class="block">
+    <h2>Цели на 2025 год</h2>
+
+    <div class="goal">
+      <span>прочитать 30 книг</span>
+      <div class="progress">
+        <div class="progress-fill" style="width:83%"></div>
+      </div>
+      <span class="value">25/30</span>
+    </div>
+
+    <div class="goal">
+      <span>написать 15 рецензий</span>
+      <div class="progress">
+        <div class="progress-fill" style="width:87%"></div>
+      </div>
+      <span class="value">13/15</span>
+    </div>
+
+    <div class="goal">
+      <span>прочитать 20 000 стр.</span>
+      <div class="progress">
+        <div class="progress-fill" style="width:73%"></div>
+      </div>
+      <span class="value">14540/20000</span>
+    </div>
+  </section>
+
+
+  <section class="block">
+    <h2>Достижения</h2>
+
+    <div class="achievements">
+      <div class="achievement active">
+        <h4>📘 Книголюб</h4>
+        <p class="achievement-description">прочитано 20+ книг</p>
+      </div>
+
+      <div class="achievement active">
+        <h4>✍ Критик</h4>
+        <p class="achievement-description">написано 10+ рецензий</p>
+      </div>
+
+      <div class="achievement active">
+        <h4>🔥 Марафонец</h4>
+        <p class="achievement-description">50 дней чтения</p>
+      </div>
+
+      <div class="achievement locked">
+        <h4>🐛 Книжный червь</h4>
+        <p class="achievement-description">прочитано 30+ книг</p>
+      </div>
+
+      <div class="achievement locked">
+        <h4>🎓 Знаток</h4>
+        <p class="achievement-description">написано 20+ рецензий</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script src="profile.js"></script>
+</body>
+</html>
