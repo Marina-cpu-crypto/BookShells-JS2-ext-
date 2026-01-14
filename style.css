@@ -490,7 +490,7 @@ h4, h2{
   font-weight: bold;
 }
 
-.badges {
+/*.badges {
   margin-top: 8px;
 }
 
@@ -503,6 +503,12 @@ h4, h2{
 
 .badge.yellow { background: #ffe2a8; }
 .badge.gray { background: #e0e0e0; }
+
+ <div class="badges">
+          <span class="badge yellow">⭐ активный читатель</span>
+          <span class="badge gray">47 дней подряд</span>
+        </div>
+*/
 
 .profile-stats {
   display: flex;

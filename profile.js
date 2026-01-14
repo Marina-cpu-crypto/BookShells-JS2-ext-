@@ -110,3 +110,23 @@
   });
 
 })();
+
+  // имя пользователя
+  const usernameEl = document.getElementById('username');
+  const savedName = localStorage.getItem('username');
+
+  if (usernameEl && savedName) {
+    usernameEl.innerText = savedName;
+  }
+
+  if (usernameEl) {
+    usernameEl.style.cursor = 'pointer';
+
+    usernameEl.addEventListener('click', () => {
+      const newName = prompt('Введите новое имя', usernameEl.innerText);
+      if (newName && newName.trim()) {
+        usernameEl.innerText = newName.trim();
+        localStorage.setItem('username', newName.trim());
+      }
+    });
+  }
