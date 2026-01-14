@@ -6,17 +6,17 @@ let collection = JSON.parse(localStorage.getItem("chosecollection"));
 let flag = true;
 if(collection.name === "read" || collection.name === "reading" || collection.name === "wannaread" || collection.name === "recent")
 {
-    collections = JSON.parse(localStorage.getItem("defaultcollections"));
+    collections = JSON.parse(localStorage.getItem("defaultcollections")) || [];
 }
 else{
-    collections = JSON.parse(localStorage.getItem("mycollections"));
+    collections = JSON.parse(localStorage.getItem("mycollections")) || [];
     flag = false;
 }
 
 
 const catalog = document.getElementById("chose-collection");
 const cleanbtn = document.getElementById("clear");
-// const deletebtn = document.getElementById("delete");
+const deletebtn = document.getElementById("delete-collection");
 
 let p = document.getElementById("about-collection");
 
@@ -48,18 +48,16 @@ function renderBooks(collection){
 }
 renderBooks(collection);
 
-catalog.addEventListener('click',(event)=>{
-    if(event.target.classList.contains="delete"){
-        const id = event.target.id;
-        collection.books = collection.books.filter((book)=> book.id !== id);
-        collection.cnt--;
-        // localStorage.setItem("chosecollection",JSON.stringify(collection));
+if (deletebtn) {
+    if (!flag) deletebtn.style.display = '';
+    else deletebtn.style.display = 'none';
+}
 
-        
-        // defaultcollections[Id]=collection;
-        // localStorage.setItem("defaultcollections",JSON.stringify(defaultcollections));
-
-        // renderBooks(JSON.parse(localStorage.getItem("chosecollection")));
+catalog.addEventListener('click', (event) => {
+    if (event.target.classList && event.target.classList.contains('delete')) {
+        const id = Number(event.target.id);
+        collection.books = collection.books.filter((book) => book.id !== id);
+        collection.cnt = collection.books.length;
         resetCollection(flag);
     }
 });
@@ -69,6 +67,19 @@ cleanbtn.addEventListener('click',()=>{
         collection.cnt = 0;
         resetCollection(flag);
 });
+
+if (deletebtn) {
+    deletebtn.addEventListener('click', () => {
+        if (flag) return; // safety: don't delete defaults
+        if (!confirm(`Удалить коллекцию "${collection.name}"? Это действие необратимо.`)) return;
+        // remove from user's collections and persist
+        collections.splice(Id, 1);
+        localStorage.setItem("mycollections", JSON.stringify(collections));
+        localStorage.removeItem("chosecollection");
+        // go back to library
+        window.location.href = "MyLibrary.html";
+    });
+}
 
 function resetCollection(flag)
 {
