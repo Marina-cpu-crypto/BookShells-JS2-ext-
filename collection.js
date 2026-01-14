@@ -70,13 +70,11 @@ cleanbtn.addEventListener('click',()=>{
 
 if (deletebtn) {
     deletebtn.addEventListener('click', () => {
-        if (flag) return; // safety: don't delete defaults
+        if (flag) return;
         if (!confirm(`Удалить коллекцию "${collection.name}"? Это действие необратимо.`)) return;
-        // remove from user's collections and persist
         collections.splice(Id, 1);
         localStorage.setItem("mycollections", JSON.stringify(collections));
         localStorage.removeItem("chosecollection");
-        // go back to library
         window.location.href = "MyLibrary.html";
     });
 }
